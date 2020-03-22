@@ -4,18 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>spring-cloud-test</artifactId>
         <groupId>com.james.example</groupId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>spring-cloud-test</artifactId>
+    <artifactId>spring-cloud-nacos-dubbo</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-cloud-nacos</module>
-        <module>spring-cloud-redis-cache</module>
-        <module>spring-cloud-nacos-dubbo</module>
+        <module>dubbo-nacos-common</module>
+        <module>dubbo-nacos-dao</module>
+        <module>dubbo-nacos-api</module>
+        <module>dubbo-nacos-server</module>
+        <module>dubbo-nacos-client</module>
     </modules>
-
 </project>

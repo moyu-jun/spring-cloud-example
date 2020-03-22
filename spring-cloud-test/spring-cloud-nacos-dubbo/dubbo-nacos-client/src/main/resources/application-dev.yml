@@ -1,0 +1,17 @@
+debug: true
+
+server:
+  port: 8841
+
+dubbo:
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: spring-cloud://localhost
+
+spring:
+  cloud:
+    nacos:
+      # Nacos 服务发现与注册配置
+      discovery:
+        server-addr: localhost:80
+
