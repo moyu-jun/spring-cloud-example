@@ -1,0 +1,11 @@
+server:
+  port: 8871
+spring:
+  application:
+    name: spring-cloud-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 114.67.106.207:8848
+#        server-addr: 127.0.0.1:8848
+

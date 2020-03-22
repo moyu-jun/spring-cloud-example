@@ -31,8 +31,6 @@
         <module>spring-cloud-dependencies</module>
         <module>spring-cloud-upms</module>
         <module>spring-cloud-test</module>
-        <module>spring-cloud-test</module>
-        <module>spring-cloud-upms</module>
     </modules>
 
     <!-- 导入依赖项目 -->
