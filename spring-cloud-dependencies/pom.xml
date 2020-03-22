@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.james.example</groupId>
+    <artifactId>spring-cloud-dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>spring-cloud-dependencies</name>
+    <url>http://www.JemGeek.com</url>
+
+    <properties>
+        <!-- Spring Boot -->
+
+        <!-- Spring Cloud -->
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <spring-cloud-openfeign.version>2.2.0.RELEASE</spring-cloud-openfeign.version>
+
+        <!-- Spring Cloud Alibaba -->
+        <spring-cloud-alibaba.verion>2.2.0.RELEASE</spring-cloud-alibaba.verion>
+        <spring-cloud-alibaba-nacos.verion>0.9.0.RELEASE</spring-cloud-alibaba-nacos.verion>
+        <spring-cloud-alibaba-nacos-config.verion>0.9.0.RELEASE</spring-cloud-alibaba-nacos-config.verion>
+
+        <!-- DataSource -->
+        <spring-boot-tk-mapper.version>2.1.5</spring-boot-tk-mapper.version>
+        <spring-boot-pagehelper.version>1.2.12</spring-boot-pagehelper.version>
+        <hikari-cp.version>3.4.1</hikari-cp.version>
+
+        <!-- others -->
+        <lombok.version>1.18.10</lombok.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- openfeign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-openfeign.version}</version>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.verion}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            &lt;!&ndash; Nacos &ndash;&gt;
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-alibaba-nacos.verion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring-cloud-alibaba-nacos.verion}</version>
+            </dependency>-->
+
+            <!-- DataSource -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari-cp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${spring-boot-tk-mapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${spring-boot-pagehelper.version}</version>
+            </dependency>
+
+            <!-- others -->
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>James</id>
+            <name>James Wang</name>
+            <email>gekylin@gmail.com</email>
+        </developer>
+    </developers>
+</project>
