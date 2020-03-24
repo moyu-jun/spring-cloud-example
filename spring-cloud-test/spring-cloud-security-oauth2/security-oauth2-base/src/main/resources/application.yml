@@ -1,0 +1,19 @@
+server:
+  port: 8080
+security:
+  user:
+    password: user
+  ignored: /
+  sessions: never
+
+  oauth2:
+    sso:
+      login-path: /login
+    client:
+      client-id: 70bf57e7fe8c16ab56aa
+      client-secret: 5c2777281ba36ceb20cabd06e387f3077d15f092
+      access-token-uri: https://github.com/login/oauth/access_token
+      user-authorization-uri: https://github.com/login/oauth/authorize
+    resource:
+      user-info-uri: https://api.github.com/user
+      prefer-token-info: false

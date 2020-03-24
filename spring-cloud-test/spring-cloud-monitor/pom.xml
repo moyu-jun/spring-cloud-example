@@ -4,21 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>spring-cloud-test</artifactId>
         <groupId>com.james.example</groupId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>spring-cloud-test</artifactId>
+    <artifactId>spring-cloud-monitor</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-cloud-nacos</module>
-        <module>spring-cloud-nacos-dubbo</module>
-        <module>spring-cloud-sentinel</module>
-        <module>spring-cloud-security-oauth2</module>
-        <module>spring-cloud-redis</module>
-        <module>spring-cloud-monitor</module>
+        <module>spring-boot-admin-server</module>
+        <module>spring-boot-admin-client</module>
+        <module>spring-boot-admin-nacos-client</module>
     </modules>
-
 </project>

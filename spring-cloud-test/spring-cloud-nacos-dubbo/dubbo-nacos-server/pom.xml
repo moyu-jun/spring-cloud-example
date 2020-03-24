@@ -70,7 +70,7 @@
         <!-- TODO 据说不加 actuator 会报错 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- Dubbo Spring Cloud Starter -->

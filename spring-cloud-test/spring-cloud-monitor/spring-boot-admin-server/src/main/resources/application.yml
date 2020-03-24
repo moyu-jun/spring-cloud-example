@@ -1,0 +1,25 @@
+debug: true
+
+server:
+  port: 8086
+
+spring:
+  application:
+    name: spring-boot-admin-server
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      # Nacos 服务发现与注册配置
+      discovery:
+        server-addr: localhost:8848
+
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

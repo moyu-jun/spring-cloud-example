@@ -1,6 +1,15 @@
 server:
   port: 8840
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
 # Dubbo nacos 配置
 dubbo:
   scan:

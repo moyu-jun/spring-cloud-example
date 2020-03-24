@@ -14,6 +14,7 @@
 
     <properties>
         <!-- Spring Boot -->
+        <spring-boot-admin.version>2.2.0</spring-boot-admin.version>
 
         <!-- Spring Cloud -->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
@@ -21,8 +22,6 @@
 
         <!-- Spring Cloud Alibaba -->
         <spring-cloud-alibaba.verion>2.2.0.RELEASE</spring-cloud-alibaba.verion>
-        <spring-cloud-alibaba-nacos.verion>0.9.0.RELEASE</spring-cloud-alibaba-nacos.verion>
-        <spring-cloud-alibaba-nacos-config.verion>0.9.0.RELEASE</spring-cloud-alibaba-nacos-config.verion>
 
         <!-- DataSource -->
         <spring-boot-tk-mapper.version>2.1.5</spring-boot-tk-mapper.version>
@@ -59,17 +58,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            &lt;!&ndash; Nacos &ndash;&gt;
+
+            <!-- Spring Boot -->
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${spring-cloud-alibaba-nacos.verion}</version>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-                <version>${spring-cloud-alibaba-nacos.verion}</version>
-            </dependency>-->
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
 
             <!-- DataSource -->
             <dependency>
