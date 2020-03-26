@@ -1,0 +1,11 @@
+server:
+  port: 8050
+
+spring:
+  activemq:
+    broker-url: tcp://114.67.106.207:61617
+    user: admin
+    password: james2020+
+    pool:
+      enabled: true
+      max-connections: 100
