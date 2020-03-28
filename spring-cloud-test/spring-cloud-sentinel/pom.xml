@@ -12,7 +12,6 @@
     <artifactId>spring-cloud-sentinel</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>sentinel-core</module>
     </modules>
 
 
