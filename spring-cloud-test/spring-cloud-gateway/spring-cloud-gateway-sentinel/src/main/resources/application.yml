@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true   # 让 gateway 可以发现 nacos 中的微服务
+      # 简化版本
+      # 注释掉下面的内容可以通过服务名称进行映射，按 网关地址 + 微服务名称 + 接口地址 访问即可，如：
+      # http://localhost:8084/spring-cloud-provider/hello?name=james
+      routes:   # 路由数组 [路由 就是指定当请求满足什么条件的时候转到哪个微服务]
+        - id: provider_route  # 当前路由的标识，要求唯一
+          uri: lb://spring-cloud-provider  # lb 指的是从 nacos 中按照名称获取微服务，并遵循负载均衡策略
+          order: 1    # 路由的优先级，数字越小级别越高
+          predicates:   # 断言（就是路由转发要满足的条件）
+            - Path=/hello  # 当强求路径满足 Path 指定的规则时，才会进行路由转发
+#          filters:  # 过滤器。请求在传递过程中可以用过过滤器对其进行一定的修改
+#            - StripPrefix=1 # 转发之前去掉 1 层路径

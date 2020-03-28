@@ -16,5 +16,7 @@
 
         <module>activemq-base</module>
         <module>rabbitmq-base</module>
+        <module>rocketmq-provider</module>
+        <module>rocketmq-consumer</module>
     </modules>
 </project>

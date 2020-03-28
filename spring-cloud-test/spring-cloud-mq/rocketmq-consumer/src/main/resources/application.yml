@@ -1,0 +1,15 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: rocketmq-consumer
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 114.67.106.207:9876
+        bindings:
+          input: {consumer.orderly: true}
+      bindings:
+        input: {destination: test-topic, content-type: text/plain, group: test-group, consumer.maxAttempts: 1}

@@ -15,5 +15,6 @@
     <modules>
         <module>spring-cloud-gateway-base</module>
         <module>spring-cloud-gateway-nacos</module>
+        <module>spring-cloud-gateway-sentinel</module>
     </modules>
 </project>
