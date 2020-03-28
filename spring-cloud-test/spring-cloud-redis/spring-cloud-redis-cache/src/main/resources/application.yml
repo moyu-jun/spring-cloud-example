@@ -21,9 +21,9 @@ spring:
       connection-test-query: SELECT 1
   redis:
     database: 0
-    host: localhost
+    host: 114.67.106.207
     port: 6379
-    password:
+    password: james2020+
     lettuce:
       pool:
         max-active: 8

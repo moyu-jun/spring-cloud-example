@@ -14,7 +14,7 @@ public class ConsumerListener {
         System.out.println("消费者接收到QUEUE消息：" + message);
     }
 
-    @JmsListener(destination = "springboot.topic",containerFactory = "jmsTopicListenerContainerFactory")
+    @JmsListener(destination = "SpringBootTopic",containerFactory = "jmsTopicListenerContainerFactory")
     public void receiverTopic(String message){
         System.out.println("消费者接收到TOPIC消息：" + message);
     }
