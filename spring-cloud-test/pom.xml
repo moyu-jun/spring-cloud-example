@@ -20,6 +20,7 @@
         <module>spring-cloud-redis</module>
         <module>spring-cloud-monitor</module>
         <module>spring-cloud-mq</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
 </project>

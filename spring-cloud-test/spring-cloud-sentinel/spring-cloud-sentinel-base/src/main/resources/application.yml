@@ -1,0 +1,11 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: spring-cloud-sentinel-base
+  cloud:
+    sentinel:
+      transport:
+        port: 8719 # 跟控制台通信的端口，随意指定未使用的端口即可
+        dashboard: localhost:8082 # 指定控制台服务的地址

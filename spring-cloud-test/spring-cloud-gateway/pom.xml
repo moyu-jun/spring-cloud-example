@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-sentinel</artifactId>
+    <artifactId>spring-cloud-gateway</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-cloud-sentinel-base</module>
-        <module>spring-cloud-sentinel-advanced</module>
+        <module>spring-cloud-gateway-base</module>
+        <module>spring-cloud-gateway-nacos</module>
     </modules>
 </project>
