@@ -1,9 +1,9 @@
 server:
-  port: 8084
+  port: 8086
 
 spring:
   application:
-    name: spring-cloud-gateway
+    name: spring-cloud-gateway-sentinel
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -13,9 +13,10 @@ spring:
     sentinel:
       transport:
         port: 8719 # 跟控制台通信的端口，随意指定未使用的端口即可
-        dashboard: localhost:8082 # 指定控制台服务的地址
+        dashboard: localhost:8083 # 指定控制台服务的地址
       filter:
         enabled: false
+      eager: true # 设置饥饿加载，默认为懒加载，会导致 Spring Boot Admin 显示为 Down
     gateway:
       enabled: true
       discovery:
@@ -32,11 +33,19 @@ spring:
           predicates:   # 断言（就是路由转发要满足的条件）
             - Path=/hello  # 当强求路径满足 Path 指定的规则时，才会进行路由转发
 
-#          filters:  # 过滤器。请求在传递过程中可以用过过滤器对其进行一定的修改
-#            - StripPrefix=1 # 转发之前去掉 1 层路径
+        - id: monitor_route
+          uri: lb://spring-boot-admin-server
+          order: 2
+          predicates:   # 断言（就是路由转发要满足的条件）
+            - Path=/monitor # 当强求路径满足 Path 指定的规则时，才会进行路由转发
+          filters:  # 过滤器。请求在传递过程中可以用过过滤器对其进行一定的修改
+            - StripPrefix=1 # 转发之前去掉 1 层路径
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+  endpoint:
+    health:
+      show-details: always

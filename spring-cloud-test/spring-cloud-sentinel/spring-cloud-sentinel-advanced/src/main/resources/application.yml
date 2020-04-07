@@ -1,0 +1,29 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: spring-cloud-sentinel-advanced
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 8722 # 跟控制台通信的端口，随意指定未使用的端口即可
+        dashboard: localhost:8083 # 指定控制台服务的地址
+      filter:
+        enabled: false
+      eager: true # 设置饥饿加载，默认为懒加载，会导致 Spring Boot Admin 显示为 Down
+
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

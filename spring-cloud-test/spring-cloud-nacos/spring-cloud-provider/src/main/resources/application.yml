@@ -10,3 +10,12 @@ spring:
 #        server-addr: 114.67.106.207:8848
         # 在使用 Docker 部署时，只能使用服务器地址，使用本地地址无法访问。
         server-addr: 127.0.0.1:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

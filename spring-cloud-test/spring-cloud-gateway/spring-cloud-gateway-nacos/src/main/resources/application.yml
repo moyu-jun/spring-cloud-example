@@ -1,9 +1,9 @@
 server:
-  port: 8084
+  port: 8085
 
 spring:
   application:
-    name: spring-cloud-gateway
+    name: spring-cloud-gateway-naocs
   cloud:
     nacos:
       discovery:
@@ -23,3 +23,11 @@ spring:
 #            - Path=/hello  # 当强求路径满足 Path 指定的规则时，才会进行路由转发
 #          filters:  # 过滤器。请求在传递过程中可以用过过滤器对其进行一定的修改
 #            - StripPrefix=1 # 转发之前去掉 1 层路径
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

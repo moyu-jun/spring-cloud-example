@@ -21,6 +21,7 @@
         <module>spring-cloud-monitor</module>
         <module>spring-cloud-mq</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-es</module>
     </modules>
 
 </project>
