@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.james.example.cloud.oauth.mapper.UpmsMenuMapper">
+  <resultMap id="BaseResultMap" type="com.james.example.cloud.oauth.domain.UpmsMenu">
+    <!--@mbg.generated generated on Thu Apr 23 23:44:17 CST 2020.-->
+    <!--@Table upms_menu-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="permissions" jdbcType="VARCHAR" property="permissions" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="orders" jdbcType="INTEGER" property="orders" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+    <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Apr 23 23:44:17 CST 2020.-->
+    id, `name`, parent_id, url, permissions, `type`, icon, orders, create_by, create_time, 
+    update_by, update_time, delete_flag
+  </sql>
+
+  <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select m.* from upms_menu m, upms_user u, upms_user_role ur, upms_role_menu rm
+    where u.username = #{username,jdbcType=VARCHAR} and u.id = ur.user_id
+    and ur.role_id = rm.role_id and rm.menu_id = m.id
+  </select>
+
+  <select id="selectByUserId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT
+        m.*
+    FROM
+        upms_user_role AS ur,
+        upms_role_menu AS rm,
+        upms_menu AS m
+    WHERE
+        ur.user_id = #{userId, jdbcType=BIGINT}
+    AND ur.role_id = rm.role_id
+    AND rm.menu_id = m.id;
+  </select>
+</mapper>
