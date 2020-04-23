@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.james.example.cloud.oauth.mapper.OauthRefreshTokenMapper">
+  <resultMap id="BaseResultMap" type="com.james.example.cloud.oauth.domain.OauthRefreshToken">
+    <!--@mbg.generated generated on Thu Apr 23 22:25:25 CST 2020.-->
+    <!--@Table oauth_refresh_token-->
+    <result column="token_id" jdbcType="VARCHAR" property="tokenId" />
+    <result column="token" jdbcType="BLOB" property="token" />
+    <result column="authentication" jdbcType="BLOB" property="authentication" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Apr 23 22:25:25 CST 2020.-->
+    token_id, token, authentication
+  </sql>
+</mapper>

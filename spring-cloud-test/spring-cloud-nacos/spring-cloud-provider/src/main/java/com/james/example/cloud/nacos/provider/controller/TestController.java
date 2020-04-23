@@ -16,10 +16,20 @@ public class TestController {
     @Value("${server.port}")
     private String port;
 
+    private int a = 0;
+
     @GetMapping("/hello")
-    public String hello(@RequestParam String name){
-        log.info("invoked name = " + name);
-        return "hello " + name + "; port = " + port;
+    public String hello(@RequestParam String name) {
+        a++;
+        log.info("invoked name = " + name + "; a = " + a);
+        return "hello " + name + "; port"  + port;
     }
 
+
+    @GetMapping("/test")
+    public String test() {
+        a++;
+        log.info("invoked a = " + a);
+        return "port"  + port;
+    }
 }
