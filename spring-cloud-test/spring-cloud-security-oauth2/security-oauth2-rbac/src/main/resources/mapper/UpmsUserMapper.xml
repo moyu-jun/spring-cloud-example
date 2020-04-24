@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.james.example.cloud.oauth.mapper.UpmsUserMapper">
+  <resultMap id="BaseResultMap" type="com.james.example.cloud.oauth.domain.UpmsUser">
+    <!--@mbg.generated generated on Thu Apr 23 23:44:17 CST 2020.-->
+    <!--@Table upms_user-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="activated" jdbcType="TINYINT" property="activated" />
+    <result column="locked" jdbcType="TINYINT" property="locked" />
+    <result column="dept_id" jdbcType="BIGINT" property="deptId" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+    <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Apr 23 23:44:17 CST 2020.-->
+    id, username, `password`, nick_name, email, mobile, avatar, sex, activated, locked, 
+    dept_id, create_by, create_time, update_by, update_time, delete_flag
+  </sql>
+</mapper>

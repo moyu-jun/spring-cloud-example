@@ -12,7 +12,5 @@
     <artifactId>spring-boot-es</artifactId>
     <packaging>jar</packaging>
 
-    <dependencies>
-
-    </dependencies>
 </project>
+          

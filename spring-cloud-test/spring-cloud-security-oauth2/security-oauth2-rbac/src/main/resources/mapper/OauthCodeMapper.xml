@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.james.example.cloud.oauth.mapper.OauthCodeMapper">
+  <resultMap id="BaseResultMap" type="com.james.example.cloud.oauth.domain.OauthCode">
+    <!--@mbg.generated generated on Thu Apr 23 22:25:25 CST 2020.-->
+    <!--@Table oauth_code-->
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="authentication" jdbcType="BLOB" property="authentication" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Apr 23 22:25:25 CST 2020.-->
+    code, authentication
+  </sql>
+</mapper>
