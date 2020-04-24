@@ -1,8 +1,10 @@
 spring:
   profiles:
-    include: prod
+    active: prod
   application:
     name: security-oauth2-rbac
+  main:
+    allow-bean-definition-overriding: true
 
 mybatis:
   # 实体类扫描路径

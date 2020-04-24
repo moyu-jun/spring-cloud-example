@@ -44,15 +44,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         List<UpmsMenu> upmsMenus = upmsMenuService.selectByUserId(upmsUser.getId());
         upmsMenus.forEach(upmsMenu -> {
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(upmsMenu.getPermissions());
-            grantedAuthorities.add(grantedAuthority);
+            if(null != upmsMenu.getPermissions() && !"".equals(upmsMenu.getPermissions())){
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(upmsMenu.getPermissions());
+                grantedAuthorities.add(grantedAuthority);
+            }
         });
         return new User(upmsUser.getUsername(), upmsUser.getPassword(), grantedAuthorities);
-
-
-//        // 用户权限列表，根据用户拥有的权限标识与如 @PreAuthorize("hasAuthority('sys:menu:view')") 标注的接口对比，决定是否可以调用接口
-//        Set<String> permissions = upmsUserService.selectPermissions(upmsUser.getUsername());
-//        List<GrantedAuthority> grantedAuthorities = permissions.stream().map(GrantedAuthorityImpl::new).collect(Collectors.toList());
-//        return new JwtUserDetails(upmsUser.getUsername(), upmsUser.getPassword(), grantedAuthorities);
     }
 }
