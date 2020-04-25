@@ -1,6 +1,14 @@
 server:
   port: 8080
 
+spring:
+  profiles:
+#    active: prod
+  application:
+    name: security-oauth2-users
+  main:
+    allow-bean-definition-overriding: true
+
 security:
   oauth2:
     client:
@@ -9,4 +17,5 @@ security:
       access-token-uri: http://localhost:8083/oauth/token
       user-authorization-uri: http://localhost:8083/oauth/authorize
     resource:
-      user-info-uri: http://localhost:8080/me
+#      user-info-uri: http://localhost:8080/me
+      token-info-uri: http://localhost:8083/oauth/check_token

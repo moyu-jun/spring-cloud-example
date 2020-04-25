@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
@@ -21,12 +22,17 @@ import javax.annotation.Resource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Resource
-    private RedisConnectionFactory redisConnectionFactory;
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
 
-    @Bean
-    public TokenStore redisTokenStore(){
-        return new RedisTokenStore(redisConnectionFactory);
+        //不拦截 oauth 开放的资源
+        http.authorizeRequests()
+//                .antMatchers("/list").permitAll()
+//                .antMatchers("/update").permitAll()
+//                .antMatchers("/update/").permitAll()
+                .antMatchers("/test/**").permitAll()
+                .anyRequest().authenticated();
+
+//        http.authorizeRequests().antMatchers("/list").permitAll();
     }
-
 }

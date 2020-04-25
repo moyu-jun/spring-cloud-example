@@ -46,13 +46,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //不拦截 oauth 开放的资源
-        http.requestMatchers()
-                .anyRequest()
-                .and()
-                .authorizeRequests()
-                .antMatchers("/oauth/token").permitAll()
-                .antMatchers("/logout").permitAll()
-                .and()
-                .logout().logoutSuccessHandler(logoutSuccessHandler);
+        http.authorizeRequests()
+                .antMatchers("/oauth/logout").permitAll()
+                .antMatchers("/oauth/authorize").permitAll()
+                .antMatchers("/oauth/confirm_access").permitAll()
+                .antMatchers("/oauth/error").permitAll()
+                .anyRequest().authenticated();
     }
 }
