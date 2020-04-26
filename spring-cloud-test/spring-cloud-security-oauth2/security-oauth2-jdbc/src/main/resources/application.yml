@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: prod
+  application:
+    name: security-oauth2-jdbc
+  main:
+    allow-bean-definition-overriding: true
+
+mybatis:
+  # 实体类扫描路径
+  type-aliases-package: com.james.example.cloud.oauth.domain
+  # xml 扫描路径
+  mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+    org.springframework.web: debug
+    org.springframework.security: DEBUG

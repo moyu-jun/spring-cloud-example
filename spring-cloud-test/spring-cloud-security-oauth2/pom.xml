@@ -15,8 +15,9 @@
 
     <modules>
         <module>security-oauth2-memory</module>
-        <module>security-oauth2-rbac</module>
+        <module>security-oauth2-jdbc</module>
         <module>security-oauth2-resource</module>
+        <module>security-oauth2-jdbc-mobile</module>
     </modules>
 
 </project>
