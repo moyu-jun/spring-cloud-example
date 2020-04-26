@@ -1,5 +1,6 @@
 package com.james.example.cloud.oauth.controller;
 
+import com.james.cloud.common.domain.ResponseResult;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -20,7 +21,7 @@ public class OAuthController {
     private ConsumerTokenServices tokenService;
 
     @GetMapping("/logout")
-    public String logout(@RequestHeader("Authorization") String token) {
+    public ResponseResult logout(@RequestHeader("Authorization") String token) {
 
         token = token.replace("Bearer ", "");
         System.out.println("token = " + token);
@@ -29,8 +30,8 @@ public class OAuthController {
         if (result) {
             System.out.println("退出登录成功，清除 Token");
         } else {
-            System.out.println("退出登录失败");
+            System.out.println("清楚 Token 失败，Token 已过期");
         }
-        return "退出登录成功";
+        return ResponseResult.ok("退出登录成功");
     }
 }

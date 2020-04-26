@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.annotation.Resource;
+
 /**
  * SpringSecurity 配置
  *
@@ -20,6 +22,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    /**
+     * 访问权限认证异常处理
+     */
+//    @Resource
+//    private UpmsAuthenticationEntryPoint upmsAuthenticationEntryPoint;
+
+    /**
+     * 自定义访问无权限接口时403响应内容
+     */
+//    @Resource
+//    private UpmsAccessDeniedHandler upmsAccessDeniedHandler;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -44,5 +58,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // 需要允许 /login 页面，否则授权码模式会 403 权限拒绝，因为无法登陆
                 .formLogin().permitAll();
+//        // 未登录认证异常
+//        http.exceptionHandling().authenticationEntryPoint(upmsAuthenticationEntryPoint);
+//        // 登录过后访问无权限的接口时自定义403响应内容
+//        http.exceptionHandling().accessDeniedHandler(upmsAccessDeniedHandler);
     }
 }

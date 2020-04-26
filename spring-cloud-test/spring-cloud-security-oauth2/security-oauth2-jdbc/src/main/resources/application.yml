@@ -11,8 +11,3 @@ mybatis:
   type-aliases-package: com.james.example.cloud.oauth.domain
   # xml 扫描路径
   mapper-locations: classpath:mapper/*.xml
-
-logging:
-  level:
-    org.springframework.web: debug
-    org.springframework.security: DEBUG
