@@ -17,5 +17,6 @@
         <module>spring-boot-admin-client</module>
         <module>spring-boot-admin-nacos-client</module>
         <module>spring-cloud-skywalking</module>
+        <module>spring-boot-prometheus</module>
     </modules>
 </project>
