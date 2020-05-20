@@ -16,7 +16,8 @@ spring:
         dashboard: localhost:8083 # 指定控制台服务的地址
       filter:
         enabled: false
-      eager: true # 设置饥饿加载，默认为懒加载，会导致 Spring Boot Admin 显示为 Down
+      # 设置饥饿加载，默认为懒加载，会导致 Spring Boot Admin 显示为 Down
+      eager: true
     gateway:
       enabled: true
       discovery:

@@ -15,12 +15,15 @@ import javax.annotation.Resource;
 /**
  * SpringSecurity 配置
  *
+ * 注意：为了解决 OAuth 2 的跨域问题，必须使用 @Order(-1) 提升优先级
+ * 参考：https://www.shuzhiduo.com/A/D854L3A25E/
+ *
  * @author James
  * @date 2020/4/23
  */
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@Order(-1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
