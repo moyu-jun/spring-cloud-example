@@ -1,6 +1,6 @@
 package com.james.example.cloud.oauth.config;
 
-import com.james.cloud.common.exception.CustomWebResponseExceptionTranslator;
+import com.james.cloud.common.exception.AuthWebResponseExceptionTranslator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -71,7 +71,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Bean
     public WebResponseExceptionTranslator<OAuth2Exception> customExceptionTranslator() {
-        return new CustomWebResponseExceptionTranslator();
+        return new AuthWebResponseExceptionTranslator();
     }
 
     @Bean

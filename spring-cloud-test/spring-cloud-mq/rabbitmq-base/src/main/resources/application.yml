@@ -2,9 +2,9 @@ server:
   port: 8050
 spring:
   rabbitmq:
-    addresses: 114.67.106.207:5673
-    username: guest
-    password: james2020+
+    addresses: 47.98.112.234:5673
+    username: admin
+    password: Law@2018
     virtual-host: /
     connection-timeout: 15000
     listener:

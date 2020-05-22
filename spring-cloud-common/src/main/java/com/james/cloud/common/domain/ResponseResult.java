@@ -1,11 +1,20 @@
 package com.james.cloud.common.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
- * 通用数据传输对象
+ * 通用请求返回对象
+ *
+ * @author James
+ * @date 2020/5/16
  */
+@Data
+@EqualsAndHashCode
+@ToString
 public class ResponseResult implements Serializable {
 
     private static final long serialVersionUID = 5805390369358950390L;
@@ -13,7 +22,7 @@ public class ResponseResult implements Serializable {
     /**
      * 状态码
      */
-    private Integer code;
+    private String code;
 
     /**
      * 消息
@@ -21,166 +30,150 @@ public class ResponseResult implements Serializable {
     private String message;
 
     /**
-     * 返回对象
+     * 返回数据对象
      */
     private Object data;
 
-    /***
-     * 过期
-     */
-    public static ResponseResult expired(String message) {
-        return new ResponseResult(ResultCode.UN_LOGIN.getCode(), message);
-    }
-
-    public static ResponseResult fail(String message) {
-        return new ResponseResult(ResultCode.FAILURE.getCode(), message);
-    }
-
-
-    /***
-     * 自定义错误返回码
-     *
-     * @param code
-     * @param message:
-     * @return
-     */
-    public static ResponseResult fail(Integer code, String message) {
-        return new ResponseResult(code, message);
-    }
-
-    public static ResponseResult fail(Integer code, String message, Object data) {
-        return new ResponseResult(code, message, data);
-    }
-
-
-    public static ResponseResult ok() {
-        return new ResponseResult(ResultCode.SUCCESS.getCode(), "OK");
-    }
-
-    public static ResponseResult ok(String message) {
-        return new ResponseResult(ResultCode.SUCCESS.getCode(), message);
-    }
-
-    public static ResponseResult ok(Object data) {
-        return new ResponseResult(ResultCode.SUCCESS.getCode(), "", data);
-    }
-
-    /**
-     * 自定义返回码
-     */
-    public static ResponseResult ok(Integer code, String message) {
-        return new ResponseResult(code, message);
-    }
-
-
-    public static ResponseResult ok(String message, Object data) {
-        return new ResponseResult(ResultCode.SUCCESS.getCode(), message, data);
-    }
-
-    /**
-     * 自定义
-     *
-     * @param code：验证码
-     * @param message：返回消息内容
-     * @param data：返回数据
-     * @return
-     */
-    public static ResponseResult ok(Integer code, String message, Object data) {
-        return new ResponseResult(code, message, data);
-    }
-
-    public static ResponseResult build(Integer code, String msg, Object data) {
-        return new ResponseResult(ResultCode.SUCCESS.getCode(), msg, data);
-    }
-
-
-
-
-
     public ResponseResult() {
-        super();
     }
 
-    public ResponseResult(Integer code) {
-        super();
-        this.code = code;
+    /**
+     * 根据通用状态码实例化返回数据对象
+     * 无返回数据
+     *
+     * @param responseCode 通用状态码
+     */
+    public ResponseResult(ResponseCode responseCode) {
+        this.code = responseCode.getCode();
+        this.message = responseCode.getMessage();
     }
 
-    public ResponseResult(Integer code, String message) {
-        super();
-        this.code = code;
+    /**
+     * 根据通用状态码实例化返回数据对象
+     * 使用自定义 message
+     *
+     * @param responseCode 通用状态码
+     * @param message      自定义 message
+     */
+    public ResponseResult(ResponseCode responseCode, String message) {
+        this.code = responseCode.getCode();
         this.message = message;
     }
 
-    public ResponseResult(Integer code, Throwable throwable) {
-        super();
-        this.code = code;
-        this.message = throwable.getMessage();
-    }
-
-    public ResponseResult(Integer code, Object data) {
-        super();
-        this.code = code;
+    /**
+     * 根据通用状态码实例化返回数据对象
+     * 添加返回数据
+     *
+     * @param responseCode 通用状态码
+     * @param data         需要返回的数据
+     */
+    public ResponseResult(ResponseCode responseCode, Object data) {
+        this.code = responseCode.getCode();
+        this.message = responseCode.getMessage();
         this.data = data;
     }
 
-    public ResponseResult(Integer code, String message, Object data) {
-        super();
-        this.code = code;
+    /**
+     * 根据通用状态码实例化返回数据对象
+     * 使用自定义 message, 但不建议！！
+     * 添加返回数据
+     *
+     * @param responseCode 通用状态码
+     * @param message      自定义 message
+     * @param data         需要返回的数据
+     */
+    public ResponseResult(ResponseCode responseCode, String message, Object data) {
+        this.code = responseCode.getCode();
         this.message = message;
         this.data = data;
     }
 
-    public Integer getCode() {
-        return code;
+    /**
+     * 请求正常返回
+     * 使用默认的返回码及消息
+     */
+    public static ResponseResult ok() {
+        return new ResponseResult(ResponseCode.SUCCESS);
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
+    /**
+     * 请求正常返回
+     * 使用默认的返回码及消息
+     * 附带返回数据
+     *
+     * @param data 通用状态码
+     */
+    public static ResponseResult ok(Object data) {
+        return new ResponseResult(ResponseCode.SUCCESS, data);
     }
 
-    public String getMessage() {
-        return message;
+    /**
+     * 请求正常返回
+     * 使用默认的返回码，自定义消息
+     * 附带返回数据
+     *
+     * @param message 自定义消息
+     * @param data    通用状态码
+     */
+    public static ResponseResult ok(String message, Object data) {
+        return new ResponseResult(ResponseCode.SUCCESS, message, data);
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    /**
+     * 请求返回异常
+     * 默认状态码为系统异常
+     */
+    public static ResponseResult error() {
+        return new ResponseResult(ResponseCode.SYSTEM);
     }
 
-    public Object getData() {
-        return data;
+    /**
+     * 请求返回异常
+     *
+     * @param message 错误消息
+     */
+    public static ResponseResult error(String message) {
+        return new ResponseResult(ResponseCode.SYSTEM, message);
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    /**
+     * 请求返回异常
+     *
+     * @param responseCode 通用异常状态码
+     */
+    public static ResponseResult error(ResponseCode responseCode) {
+        return new ResponseResult(responseCode);
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((data == null) ? 0 : data.hashCode());
-        result = prime * result + ((message == null) ? 0 : message.hashCode());
-        result = prime * result + ((code == null) ? 0 : code.hashCode());
-        return result;
+    /**
+     * 请求返回异常
+     *
+     * @param responseCode 通用异常状态码
+     * @param message      自定义错误消息
+     */
+    public static ResponseResult error(ResponseCode responseCode, String message) {
+        return new ResponseResult(responseCode, message);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ResponseResult that = (ResponseResult) o;
-        return Objects.equals(code, that.code) &&
-                Objects.equals(message, that.message) &&
-                Objects.equals(data, that.data);
+    /**
+     * 请求返回异常
+     *
+     * @param responseCode 通用异常状态码
+     * @param data         携带数据
+     */
+    public static ResponseResult error(ResponseCode responseCode, Object data) {
+        return new ResponseResult(responseCode, data);
     }
 
-    @Override
-    public String toString() {
-        return "ResponseResult{" +
-                "code=" + code +
-                ", message='" + message + '\'' +
-                ", data=" + data +
-                '}';
+    /**
+     * 请求返回异常
+     *
+     * @param responseCode 通用异常状态码
+     * @param message      自定义错误消息
+     * @param data         携带数据
+     */
+    public static ResponseResult error(ResponseCode responseCode, String message, Object data) {
+        return new ResponseResult(responseCode, message, data);
     }
+
 }
