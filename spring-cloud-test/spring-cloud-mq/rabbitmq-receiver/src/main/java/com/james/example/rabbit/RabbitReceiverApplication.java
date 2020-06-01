@@ -1,15 +1,15 @@
-package com.james.example.rabbitmq;
+package com.james.example.rabbit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Created by James on 2020/3/26.
+ * @author James
+ * @date 2020/6/1
  */
 @SpringBootApplication
-public class RabbitMQApplication {
-
+public class RabbitReceiverApplication {
     public static void main(String[] args) {
-        SpringApplication.run(RabbitMQApplication.class, args);
+        SpringApplication.run(RabbitReceiverApplication.class, args);
     }
 }

@@ -1,0 +1,17 @@
+server:
+  port: 8050
+spring:
+  rabbitmq:
+    host: 114.67.106.207
+    port: 5672
+    username: james
+    password: james2020+
+    virtual-host: /
+    connection-timeout: 15000
+#    listener:
+#      simple:
+#        # 手动应答模式
+#        acknowledge-mode: manual
+#        concurrency: 5
+#        max-concurrency: 10
+
