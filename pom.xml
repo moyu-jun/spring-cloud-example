@@ -30,6 +30,12 @@
     <modules>
         <module>common</module>
         <module>dependencies</module>
+        <module>nacos</module>
+        <module>auth</module>
+        <module>mq</module>
+        <module>redis</module>
+        <module>db</module>
+        <module>gateway</module>
     </modules>
 
     <!-- 导入依赖项目 -->

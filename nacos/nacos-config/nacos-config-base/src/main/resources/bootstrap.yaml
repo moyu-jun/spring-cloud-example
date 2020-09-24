@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-cloud-nacos-config
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: 114.67.106.207:8848
+        prefix: spring-cloud-nacos-config-base
+        file-extension: yaml
+        group: spring-cloud-example
+        refresh-enabled: false
+        namespace: 904174a3-d51f-43ed-a456-c4fd7386ecb3
