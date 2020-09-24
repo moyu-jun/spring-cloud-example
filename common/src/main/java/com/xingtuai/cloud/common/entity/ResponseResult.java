@@ -1,4 +1,4 @@
-package com.james.cloud.common.domain;
+package com.xingtuai.cloud.common.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,19 +10,19 @@ import java.io.Serializable;
  * 通用请求返回对象
  *
  * @author James
- * @date 2020/5/16
+ * @date 2020/9/24
  */
 @Data
 @EqualsAndHashCode
 @ToString
 public class ResponseResult implements Serializable {
 
-    private static final long serialVersionUID = 5805390369358950390L;
+    private static final long serialVersionUID = 4760944232555281099L;
 
     /**
      * 状态码
      */
-    private String code;
+    private Integer code;
 
     /**
      * 消息
@@ -94,6 +94,17 @@ public class ResponseResult implements Serializable {
      */
     public static ResponseResult ok() {
         return new ResponseResult(ResponseCode.SUCCESS);
+    }
+
+    /**
+     * 请求正常返回
+     * 使用默认的返回码及消息
+     * 附带返回数据
+     *
+     * @param message 通用状态码
+     */
+    public static ResponseResult ok(String message) {
+        return new ResponseResult(ResponseCode.SUCCESS, message);
     }
 
     /**
