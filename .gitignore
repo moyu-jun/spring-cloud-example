@@ -18,8 +18,9 @@ target/
 *.iws
 *.iml
 *.ipr
-bootstarp-prod.yml
-application-prod.yml
+*-prod.yml
+*-prod.yaml
+*-prod.properties
 
 ### NetBeans ###
 /nbproject/private/
