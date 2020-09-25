@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-cloud-nacos-config-advanced
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: 114.67.106.207:8848
+      # 单文件配置
+      config:
+        server-addr: 114.67.106.207:8848
+        prefix: spring-cloud-nacos-config-advanced
+        file-extension: yaml
+        group: spring-cloud-example
+#        ext-config:
+#          - data-id: common.yaml
+#            group: spring-cloud-example
+#            refresh: true
+#
+#          - data-id: spring-cloud-nacos-config-advanced.yaml
+#            group: spring-cloud-example
+#            refresh: true
+
+#          - data-id:
+#            group: spring-cloud-example
+#            file-extension:
+#            refresh:

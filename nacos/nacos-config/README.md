@@ -74,7 +74,14 @@ public class NacosConfigBaseApplication {
 
 此项目仅演示了 `naocs config` 的进阶使用，主要研究配置中心的环境隔离，多环境切换，是否支持数据源，Redis等配置。
 
+**研究结论**
 
+可以使用 nacos config 配置数据源，Redis等配置，但这些配置，仅在启动时有效，启动后修改参数无效，需要重启才可。
+
+优点：项目部署后，如需修改配置文件，仅在 nacos 中修改即可，但需要重启才能生效，可避免重新打包。
+缺点：文件暴露在 Nacos Config 中，可能会导致不安全。
+
+nacos config 更适合设置一些外部配置，可动态更新。
 
 ## 注意事项
 

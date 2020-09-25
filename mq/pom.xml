@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>mq</artifactId>
-    <packaging>mq</packaging>
+    <packaging>pom</packaging>
 
     <description>消息队列相关的技术实践</description>
 

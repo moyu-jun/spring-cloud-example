@@ -1,0 +1,13 @@
+server:
+  port: 10001
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis:
+  # 实体类扫描路径
+  type-aliases-package: com.xingtuai.cloud.nacos.config.domain
+  # xml 扫描路径
+  mapper-locations: classpath:mapper/*.xml
