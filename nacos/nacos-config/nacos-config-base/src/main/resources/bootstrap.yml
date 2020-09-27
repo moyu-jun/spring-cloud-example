@@ -11,6 +11,8 @@ spring:
       username: nacos
       password: James2020+
       config:
+        # nacos config 的开关
+#        enabled: false
         prefix: spring-cloud-nacos-config-base.yaml
         file-extension: yaml
         group: SPRING_CLOUD_EXAMPLE_GROUP

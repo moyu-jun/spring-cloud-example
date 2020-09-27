@@ -1,0 +1,11 @@
+# 环境隔离，使用 namespace
+# 开发环境
+spring:
+  cloud:
+    nacos:
+      # 权限认证，nacos.core.auth.enabled=true 时需要添加
+      username: nacos
+      password: James2020+
+      discovery:
+        server-addr: 114.67.106.207:8848
+        namespace: a463038a-525b-4ad0-988e-ec71ff043c22

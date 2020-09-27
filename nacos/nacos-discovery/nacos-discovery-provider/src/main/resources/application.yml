@@ -1,0 +1,14 @@
+server:
+  port: 10010
+
+
+# Nacos EndPoint: http://ip:port/actuator/nacos-discovery
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+

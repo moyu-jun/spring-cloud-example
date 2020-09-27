@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: nacos-discovery-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        group: SPRING_CLOUD_EXAMPLE_GROUP
+        # 自定义元数据
+        metadata:
+          V: 1.0
