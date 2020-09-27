@@ -26,14 +26,14 @@ public class UserController {
     @Resource
     private SysUserService userService;
 
-    @Value("${user.name}")
+    @Value("${base.name}")
     String name;
 
-    @Value("${common.test}")
-    String commonTest;
+    @Value("${profiles.active}")
+    String active;
 
     @GetMapping("/{id}")
-    public ResponseResult getUser(@PathVariable Long id){
+    public ResponseResult getUser(@PathVariable Long id) {
 
         log.info("接口进入   ---->   获取用户信息");
         log.info("请求参数：id = {}", id);
@@ -42,9 +42,8 @@ public class UserController {
         return ResponseResult.ok(user);
     }
 
-
     @GetMapping("/test")
     public String test() {
-        return name + ":" + commonTest;
+        return "name: " + name + "; active: " + active;
     }
 }

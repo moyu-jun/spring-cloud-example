@@ -17,6 +17,7 @@
     <modules>
         <module>nacos-config-base</module>
         <module>nacos-config-advanced</module>
+        <module>nacos-config-multi</module>
     </modules>
 
 </project>

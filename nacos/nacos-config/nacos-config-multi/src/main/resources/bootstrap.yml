@@ -1,15 +1,17 @@
+server:
+  port: 10001
+
 spring:
-  profiles:
-    active: dev
   application:
-    name: nacos-config-advanced
+    name: nacos-config-multi
   main:
     allow-bean-definition-overriding: true
   cloud:
     nacos:
-      discovery:
-        enabled: true
-        register-enabled: true
+      # 权限认证，nacos.core.auth.enabled=true 时需要添加
+      username: nacos
+      password: James2020+
+      # nacos config
       config:
         # 用于共享的配置文件
         shared-configs:
@@ -32,3 +34,4 @@ spring:
           - data-id: nacos-config-base.yaml
             group: SPRING_CLOUD_EXAMPLE_GROUP
             refresh: true
+

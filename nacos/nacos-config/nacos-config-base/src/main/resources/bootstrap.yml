@@ -2,13 +2,15 @@ spring:
   profiles:
     active: dev
   application:
-    name: spring-cloud-nacos-config-base
+    name: nacos-config-base
   main:
     allow-bean-definition-overriding: true
   cloud:
     nacos:
+      # 权限认证，nacos.core.auth.enabled=true 时需要添加
+      username: nacos
+      password: James2020+
       config:
-        server-addr: 114.67.106.207:8848
-        prefix: spring-cloud-nacos-config-base
+        prefix: spring-cloud-nacos-config-base.yaml
         file-extension: yaml
-        group: spring-cloud-example
+        group: SPRING_CLOUD_EXAMPLE_GROUP

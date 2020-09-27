@@ -3,18 +3,18 @@ package com.xingtuai.cloud.nacos.config.controller;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 测试接口
- * RefreshScope 使 Nacos Config 配置内容支持动态刷新
- *
  * @author James
- * @date 2020/9/25
+ * @date 2020/9/27
  */
 @RefreshScope
 @RestController
-public class TestController {
+@RequestMapping("users")
+public class UserController {
+
 
     @Value("${base.name}")
     String name;
@@ -22,13 +22,12 @@ public class TestController {
     @Value("${base.age}")
     String age;
 
-    @GetMapping("/name")
-    public String getName() {
-        return name;
+    @Value("${profiles.active}")
+    String active;
+
+    @GetMapping("/test")
+    public String test() {
+        return "name: " + name + "; age: " + age + "; active: " + active;
     }
 
-    @GetMapping("/age")
-    public String getAge() {
-        return age;
-    }
 }
