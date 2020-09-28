@@ -1,0 +1,28 @@
+server:
+  port: 10020
+
+spring:
+  boot:
+    admin:
+      notify:
+        mail:
+          to: 253326975@qq.com
+          from: xingtuai@qq.com
+          ignore-changes: ""
+  security:
+    user:
+      name: james
+      password: James2020+
+  mail:
+    host: smtp.qq.com
+    protocol: smtp
+    username: xingtuai@qq.com
+    password: fnhpwaifzphocjei
+    default-encoding: UTF-8
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465
+    properties.mail.smtp.display.sendmail: xingtuai@qq.com
+    properties.mail.smtp.display.sendname: Admin
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true

@@ -1,0 +1,19 @@
+server:
+  port: 10021
+
+spring:
+  application:
+    name: monitor-admin-client
+  boot:
+    admin:
+      client:
+        url: http://localhost:10020
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -36,6 +36,7 @@
         <module>redis</module>
         <module>db</module>
         <module>gateway</module>
+        <module>monitor</module>
     </modules>
 
     <!-- 导入依赖项目 -->

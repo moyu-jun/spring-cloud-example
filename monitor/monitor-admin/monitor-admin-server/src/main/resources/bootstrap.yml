@@ -2,7 +2,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: nacos-discovery-provider
+    name: monitor-admin-server
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -10,6 +10,11 @@ spring:
       # 权限认证，nacos.core.auth.enabled=true 时需要添加
       username: ${nacos.username}
       password: ${nacos.password}
+      config:
+        # 用于共享的配置文件
+        shared-configs:
+          - data-id: common-base.yaml
+            group: SPRING_CLOUD_EXAMPLE_GROUP
       discovery:
         server-addr: ${nacos.server-addr}
         namespace: ${nacos.namespace}
