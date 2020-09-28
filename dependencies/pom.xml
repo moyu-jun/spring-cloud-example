@@ -16,6 +16,7 @@
     <properties>
         <!-- Spring Cloud Alibaba -->
         <spring-cloud-alibaba.verion>2.2.2.RELEASE</spring-cloud-alibaba.verion>
+        <sentinel-datasource-nacos.verion>1.8.0</sentinel-datasource-nacos.verion>
 
         <!-- Spring Boot & Spring Cloud -->
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
@@ -86,6 +87,12 @@
                 <version>${spring-cloud-alibaba.verion}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-nacos</artifactId>
+                <version>${sentinel-datasource-nacos.verion}</version>
             </dependency>
 
             <!-- Dubbo 监控-->

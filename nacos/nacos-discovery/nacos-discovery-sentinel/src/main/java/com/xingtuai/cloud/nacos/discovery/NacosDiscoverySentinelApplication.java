@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @author James
@@ -12,8 +13,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class NacosDiscoveryConsumerApplication {
+@MapperScan("com.xingtuai.cloud.nacos.discovery.mapper")
+public class NacosDiscoverySentinelApplication {
     public static void main(String[] args) {
-        SpringApplication.run(NacosDiscoveryConsumerApplication.class, args);
+        SpringApplication.run(NacosDiscoverySentinelApplication.class, args);
     }
 }

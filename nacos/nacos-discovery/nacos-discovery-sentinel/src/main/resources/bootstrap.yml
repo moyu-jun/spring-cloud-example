@@ -1,0 +1,55 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: nacos-discovery-sentinel
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      # 权限认证，nacos.core.auth.enabled=true 时需要添加
+      username: ${nacos.username}
+      password: ${nacos.password}
+      # Nacos 服务注册与发现
+      discovery:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: SPRING_CLOUD_EXAMPLE_GROUP
+        # 自定义元数据
+        metadata:
+          V: 1.0
+      # Nacos 配置中心
+      config:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        # 用于共享的配置文件
+        shared-configs:
+          - data-id: common-mysql.yaml
+            group: SPRING_CLOUD_EXAMPLE_GROUP
+
+          - data-id: common-redis.yaml
+            group: SPRING_CLOUD_EXAMPLE_GROUP
+
+          - data-id: common-base.yaml
+            group: SPRING_CLOUD_EXAMPLE_GROUP
+    # Spring Cloud Alibaba Sentinel
+    sentinel:
+      transport:
+        dashboard: ${sentinel.dashboard}
+      datasource:
+        flow:
+          nacos:
+            username: ${nacos.username}
+            password: ${nacos.password}
+            server-addr: ${nacos.server-addr}
+            namespace: ${nacos.namespace}
+            dataId: spring-cloud-example-sentinel-rule
+            groupId: SPRING_CLOUD_SENTINEL_GROUP
+            data-type: json
+            # 路由存储规则
+            rule-type: flow
+
+feign:
+  # 开启 feign 对 sentinel 的支持
+  sentinel:
+    enabled: true

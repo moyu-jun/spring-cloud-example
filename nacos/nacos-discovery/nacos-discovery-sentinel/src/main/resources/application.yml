@@ -1,0 +1,8 @@
+server:
+  port: 10016
+
+mybatis:
+  # 实体类扫描路径
+  type-aliases-package: com.xingtuai.cloud.nacos.discovery.domain
+  # xml 扫描路径
+  mapper-locations: classpath:mapper/*.xml

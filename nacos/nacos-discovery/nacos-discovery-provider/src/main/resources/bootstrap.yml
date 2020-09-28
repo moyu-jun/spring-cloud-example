@@ -10,5 +10,14 @@ spring:
       discovery:
         group: SPRING_CLOUD_EXAMPLE_GROUP
         # 自定义元数据
+        # 可以通过自定义元数据实现灰度路由，灰度发布等功能，或者是版本切换、环境切换、地域切换
+        # Gateway 上的具体实现还待研究
         metadata:
-          V: 1.0
+          # 版本
+          version: 1.0
+          # 地域
+          region: hangzhou
+          # 环境
+          env: dev
+          # 可用区
+          zone: zone

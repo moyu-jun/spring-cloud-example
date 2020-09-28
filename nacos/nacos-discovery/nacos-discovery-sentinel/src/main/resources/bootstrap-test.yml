@@ -1,0 +1,9 @@
+# 环境隔离，使用 namespace
+# 线上环境
+nacos:
+  server-addr: 114.67.106.207:8848
+  username: nacos
+  password: James2020+
+  namespace: 0d84f533-74ca-4ca5-9dd8-01e8866cd0c4
+sentinel:
+  dashboard: 192.168.9.17:8883

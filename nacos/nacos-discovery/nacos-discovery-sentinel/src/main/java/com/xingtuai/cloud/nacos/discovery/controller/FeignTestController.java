@@ -1,6 +1,6 @@
 package com.xingtuai.cloud.nacos.discovery.controller;
 
-import com.xingtuai.cloud.nacos.discovery.service.FeignService;
+import com.xingtuai.cloud.nacos.discovery.service.FeignEchoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +20,13 @@ public class FeignTestController {
 
 
     @Resource
-    private FeignService feignService;
+    private FeignEchoService feignEchoService;
 
     @Value("${spring.application.name}")
     private String appName;
 
     @GetMapping("/echo")
     public String echoAppName() {
-        return feignService.echo(appName);
+        return feignEchoService.echo(appName);
     }
 }
