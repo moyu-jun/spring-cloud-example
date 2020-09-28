@@ -32,9 +32,9 @@
         <module>dependencies</module>
         <module>nacos</module>
         <module>auth</module>
-        <module>mq</module>
+        <module>message</module>
         <module>redis</module>
-        <module>db</module>
+        <module>datasource</module>
         <module>gateway</module>
         <module>monitor</module>
     </modules>

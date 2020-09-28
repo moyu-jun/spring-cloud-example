@@ -9,7 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>mq</artifactId>
+    <artifactId>message</artifactId>
     <packaging>pom</packaging>
 
     <description>消息队列相关的技术实践</description>

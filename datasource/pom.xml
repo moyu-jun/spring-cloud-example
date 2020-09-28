@@ -9,7 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>db</artifactId>
+    <artifactId>datasource</artifactId>
     <packaging>pom</packaging>
 
     <description>数据库相关技术实践</description>
