@@ -3,9 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>monitor-admin</module>
-    </modules>
     <parent>
         <artifactId>spring-cloud-example</artifactId>
         <groupId>com.xingtuai.example</groupId>
@@ -17,4 +14,7 @@
 
     <description>监控相关技术栈</description>
 
+    <modules>
+        <module>monitor-admin</module>
+    </modules>
 </project>

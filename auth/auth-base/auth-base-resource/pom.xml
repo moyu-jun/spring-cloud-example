@@ -4,18 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>auth-base</artifactId>
         <groupId>com.xingtuai.example</groupId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>auth</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>auth-base-resource</artifactId>
+    <packaging>jar</packaging>
 
-    <description>认证中心相关技术实践</description>
+    <description>资源服务器</description>
 
-    <modules>
-        <module>auth-base</module>
-        <module>auth-advanced</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
