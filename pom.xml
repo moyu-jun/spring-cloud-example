@@ -37,6 +37,7 @@
         <module>datasource</module>
         <module>gateway</module>
         <module>monitor</module>
+        <module>deploy</module>
     </modules>
 
     <!-- 导入依赖项目 -->
