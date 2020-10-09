@@ -5,4 +5,7 @@ nacos:
   username: nacos
   password: James2020+
   namespace: 0d84f533-74ca-4ca5-9dd8-01e8866cd0c4
-
+mail:
+  username: xingtuai@qq.com
+  password: lnlgwssfzohackei
+  to: 253326975@qq.com

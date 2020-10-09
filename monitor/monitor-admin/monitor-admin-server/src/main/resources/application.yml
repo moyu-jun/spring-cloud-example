@@ -6,8 +6,8 @@ spring:
     admin:
       notify:
         mail:
-          to: 253326975@qq.com
-          from: xingtuai@qq.com
+          to: ${mail.to}
+          from: ${mail.username}
           ignore-changes: ""
   security:
     user:
@@ -16,12 +16,12 @@ spring:
   mail:
     host: smtp.qq.com
     protocol: smtp
-    username: xingtuai@qq.com
-    password: fnhpwaifzphocjei
+    username: ${mail.username}
+    password: ${mail.password}
     default-encoding: UTF-8
     properties.mail.smtp.auth: true
     properties.mail.smtp.port: 465
-    properties.mail.smtp.display.sendmail: xingtuai@qq.com
+    properties.mail.smtp.display.sendmail: ${mail.username}
     properties.mail.smtp.display.sendname: Admin
     properties.mail.smtp.starttls.enable: true
     properties.mail.smtp.starttls.required: true
