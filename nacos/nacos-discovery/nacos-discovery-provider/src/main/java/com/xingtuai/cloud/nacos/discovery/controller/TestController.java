@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("/echo/{message}")
-    public String test(@PathVariable String message) {
+    public String echo(@PathVariable String message) {
 
         return "Hello Nacos Discovery " + message;
     }
