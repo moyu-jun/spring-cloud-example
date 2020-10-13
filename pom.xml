@@ -38,6 +38,7 @@
         <module>gateway</module>
         <module>monitor</module>
         <module>deploy</module>
+        <module>test</module>
     </modules>
 
     <!-- 导入依赖项目 -->
