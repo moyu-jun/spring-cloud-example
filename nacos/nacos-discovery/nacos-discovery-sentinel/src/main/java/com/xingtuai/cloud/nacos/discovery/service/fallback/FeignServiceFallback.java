@@ -1,12 +1,12 @@
 package com.xingtuai.cloud.nacos.discovery.service.fallback;
 
-import com.xingtuai.cloud.nacos.discovery.service.FeignEchoService;
+import com.xingtuai.cloud.nacos.discovery.service.FeignService;
 
 /**
  * @author James
  * @date 2020/9/28
  */
-public class EchoServiceFallback implements FeignEchoService {
+public class FeignServiceFallback implements FeignService {
 
     @Override
     public String echo(String message) {

@@ -1,6 +1,6 @@
 package com.xingtuai.cloud.nacos.discovery.service.config;
 
-import com.xingtuai.cloud.nacos.discovery.service.fallback.EchoServiceFallback;
+import com.xingtuai.cloud.nacos.discovery.service.fallback.FeignServiceFallback;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 public class FeignConfig {
 
     @Bean
-    public EchoServiceFallback echoServiceFallback() {
-        return new EchoServiceFallback();
+    public FeignServiceFallback feignServiceFallback() {
+        return new FeignServiceFallback();
     }
 }

@@ -15,7 +15,6 @@ public class TestController {
 
     @GetMapping("/echo/{message}")
     public String echo(@PathVariable String message) {
-
         return "Hello Nacos Discovery " + message;
     }
 }
