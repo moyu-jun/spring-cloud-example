@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/10/13
  */
 @RestController
-@RequestMapping
+@RequestMapping("/test/rest")
 public class TestController {
 
 
     @GetMapping("/echo")
     public String echo(String message){
-        return "echo message: " + message;
+        return "Test.Rest: echo message: " + message;
     }
 }

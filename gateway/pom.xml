@@ -16,6 +16,7 @@
 
     <modules>
         <module>gateway-base</module>
+        <module>gateway-server-one</module>
     </modules>
 
 

@@ -1,0 +1,19 @@
+debug: true
+
+server:
+  port: 8090
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+#        server-addr: 114.67.106.207:8848
+    sentinel:
+      transport:
+        port: 8719 # 跟控制台通信的端口，随意指定未使用的端口即可
+        dashboard: 114.67.106.207:8083 # 指定控制台服务的地址
+      filter:
+        enabled: false
+      # 设置饥饿加载，默认为懒加载，会导致 Spring Boot Admin 显示为 Down
+      eager: true
