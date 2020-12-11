@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${base.name}")
+    @Value("${user.name}")
     String name;
 
-    @Value("${base.age}")
+    @Value("${user.age}")
     String age;
 
     @GetMapping("/name")

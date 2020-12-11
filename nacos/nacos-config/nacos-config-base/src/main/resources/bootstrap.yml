@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: test
   application:
     name: nacos-config-base
   main:
@@ -9,7 +9,7 @@ spring:
     nacos:
       # 权限认证，nacos.core.auth.enabled=true 时需要添加
       username: nacos
-      password: James2020+
+      password: james2020+
       config:
         # nacos config 的开关
 #        enabled: false
