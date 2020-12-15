@@ -1,0 +1,24 @@
+server:
+  port: 10011
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: rocketmq-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          # RocketMQ 服务器地址
+          name-server: 47.111.110.81:9876
+        bindings:
+          input1: {consumer.orderly: true}  #是否排序
+          input2: {consumer.tags: testTag}   #订阅 带tag值为tagStr的字符串
+          input3: {consumer.tags: tagObj}   #订阅 带tag值为tabObj的字符串
+      bindings:
+        input1: {destination: test-topic1, content-type: text/plain, group: test-group1, consumer.maxAttempts: 1}
+        input2: {destination: test-topic1, content-type: application/plain, group: test-group2, consumer.maxAttempts: 1}
+        input3: {destination: test-topic2, content-type: application/plain, group: test-group3, consumer.maxAttempts: 1}

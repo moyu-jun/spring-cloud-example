@@ -4,18 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>spring-cloud-example</artifactId>
+        <artifactId>message</artifactId>
         <groupId>com.xingtuai.example</groupId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>message</artifactId>
+    <artifactId>rocketmq</artifactId>
     <packaging>pom</packaging>
 
-    <description>消息队列相关的技术实践</description>
-
-
     <modules>
-        <module>rocketmq</module>
+        <module>rocketmq-provider</module>
+        <module>rocketmq-consumer</module>
     </modules>
+
+
 </project>

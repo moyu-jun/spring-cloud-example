@@ -1,0 +1,19 @@
+server:
+  port: 10010
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: rocketmq-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          # RocketMQ 服务器地址
+          name-server: 47.111.110.81:9876
+      bindings:
+        testOutput: {destination: test-topic1, content-type: application/json}
+        baseOutput: {destination: test-topic2, content-type: application/json}
