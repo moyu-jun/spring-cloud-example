@@ -14,6 +14,8 @@ spring:
         binder:
           # RocketMQ 服务器地址
           name-server: 47.111.110.81:9876
+#          access-key: rocket
+#          secret-key: Shidu2020+
         bindings:
           input1: {consumer.orderly: true}  #是否排序
           input2: {consumer.tags: testTag}   #订阅 带tag值为tagStr的字符串
